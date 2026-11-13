@@ -385,3 +385,29 @@ Left out on purpose to keep the scope focused:
 - **End-to-end tests** with Playwright against the Docker Compose stack, and a CI pipeline (GitHub Actions) running lint, tests and coverage for both apps.
 - **Rate limiting** on the API.
 - **Calculation history** stored in the browser.
+
+
+
+---
+
+## AI assistance
+
+This project was developed with the help of an AI assistant (Claude, by Anthropic),
+used as a pair-programming mentor. I defined the requirements, reviewed the code,
+ran the tests locally and with Docker, and I am able to explain and modify every part
+of it.
+
+Prompts used (summarized):
+
+1. **Backend:** "Act as a Senior Software Engineer mentoring a Junior developer. Build the
+   backend of a full-stack calculator in Go: layered architecture (handlers, service,
+   models), standard `net/http`, basic and advanced operations (power, square root,
+   percentage), strict validation of edge cases (division by zero, negative square root,
+   empty/non-numeric input, overflow), semantic HTTP status codes with JSON errors, CORS
+   for local development, and table-driven unit tests with coverage."
+2. **Frontend and docs:** "Build the frontend with React + TypeScript and Vite: responsive
+   calculator UI, a dedicated typed API service, client-side validation, friendly error
+   messages, keyboard support, and Vitest + React Testing Library tests with a mocked
+   API. Add Dockerfiles and a docker-compose file, and write a professional README in
+   English."
+3. Follow-up questions about running the project locally, Docker, and publishing it to GitHub.
