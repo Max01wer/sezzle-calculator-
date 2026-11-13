@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    container_name: calculator-backend
+    environment:
+      PORT: "8080"
+      # Only needed when the browser calls the API directly (e.g. `npm run dev`
+      # on the host). In this setup nginx proxies /api, so requests are same-origin.
+      CORS_ALLOWED_ORIGINS: "http://localhost:5173,http://localhost:3000"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ""
+    container_name: calculator-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
